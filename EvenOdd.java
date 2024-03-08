@@ -1,24 +1,10 @@
-import java.util.Scanner;
-
 public class EvenOdd {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
+        int n = 67;
+        System.out.println(isOdd(n));
+     }
 
-    Scanner in = new Scanner(System.in);
-    System.out.print("Enter number : ");
-    int num = in.nextInt();
-
-    evenodd(num);
-    
-    }
-
-    static void evenodd(int n) {
-        
-        if (n % 2 == 0) {
-            System.out.println("even");
-        } else {
-            System.out.println("odd");
-        }
-
-    }
-
+     static boolean isOdd(int n){
+        return (n & 1) == 1 ;
+     }
 }
