@@ -2,34 +2,50 @@ import java.util.Arrays;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6};
-        selection(arr);
+        int[] arr = {2,5,1,8,4};
+        // System.out.println(max(arr));
+        // selection(arr, arr.length-1);
+        // System.out.println(Arrays.toString(arr));
+        selectionSort(arr, arr.length, 0, 0);
         System.out.println(Arrays.toString(arr));
-    
     }
 
-    static void selection(int[] arr) {
-        for(int i = 0 ; i < arr.length ; i++){
-            int last = arr.length - i - 1;
-            int max = maxIndex(arr, 0, last);
-            swap(arr, last, max);
+    static void selectionSort(int[] arr , int row , int col , int max){
+        if(row == 0){
+            return;
         }
+        if (col < row) {
+            if (arr[col] > arr[max]) {
+               selectionSort(arr, row, col+1, col);
+            }else{
+                selectionSort(arr, row, col+1, max);
+            } 
+        } else {
+            int temp = arr[row-1];
+            arr[row-1] = arr[max];
+            arr[max] = temp;
+            selectionSort(arr,row-1, 0,0);
+        }   
     }
 
-    static int maxIndex(int[] arr, int start , int end){
-        int maxIn = 0;
-        for(int i = start ; i <= end ; i++){
-            if (arr[maxIn] < arr[i]) {
-                maxIn = i ;
-            }
-        }
-        return maxIn;
-    }
+    // static void selection(int[] arr , int e){
+    //     int start = 0 ;
+    //     int maxElem = max(arr,e);
+    //     int temp = maxElem;
+    //     maxElem = arr[e];
+    //     arr[e] = temp;
+    //     selection(arr, e-1);
+    //     // System.out.println(Arrays.toString(arr));
+    // }
 
-    static void swap(int[] arr , int first , int second){
-        int temp = arr[first];
-        arr[first] = arr[second];
-        arr[second] = temp;
-    }
-
+    // static int max(int[] arr,int end){
+    //     int i;
+    //     int m = arr[0];
+    //     for (i = 1 ; i <= end ; i++) {
+    //         if (arr[i] > m) {
+    //             m = arr[i];
+    //         }
+    //     }
+    //     return m ;
+    // }
 }
