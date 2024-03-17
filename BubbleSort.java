@@ -1,51 +1,26 @@
 import java.util.Arrays;
 
-public class BubbleSort {
+public class BubbleSort{
     public static void main(String[] args) {
-        int[] arr = {0,4,3,88,0,1,2,7,5,1};
-       helper(arr);
-       bubbleSort(arr, arr.length-1, 0);
-       System.out.println(Arrays.toString(arr));
-    }
-
-    static void bubbleSort(int[] arr , int row , int col){
-        if(row == 0){
-            return;
-        }
-        if (col < row) {
-            if (arr[col] > arr[col+1]) {
-                int temp = arr[col];
-                arr[col] = arr[col+1];
-                arr[col+1] = temp;
-            }
-            bubbleSort(arr, row, col+1);
-        } else {
-            bubbleSort(arr,row-1, 0);
-        }   
-    }
-
-    static void helper(int[] arr){
-        bubble(arr, 0, arr.length-1);
+        int[] arr = {1,-4,-66,0};
+        bubble(arr);
         System.out.println(Arrays.toString(arr));
     }
 
-    static void bubble(int[] arr , int i , int end){
-        if (end == 0) {
-            // System.out.println(Arrays.toString(arr));
-            return;
-        }
-        if (i < end ) {
-            if (arr[i] > arr[i+1]) {
-                int temp = arr[i];
-                arr[i] = arr[i+1];
-                arr[i+1] = temp;
-                bubble(arr, i+1, end);
-            } else{
-                bubble(arr, i+1, end);
+    static void bubble(int[] arr){
+        for(int i = 0 ; i < arr.length ; i++){
+            boolean swap = false ;
+            for(int j = 1 ; j < arr.length - i ; j++){
+                if (arr[j - 1] > arr[j]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j-1] ;
+                    arr[j-1] = temp ;
+                    swap = true ;
+                }
+            }
+            if (swap == false) {
+                break ;
             }
         }
-        bubble(arr, i, end-1);
     }
-
-
 }
