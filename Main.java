@@ -1,11 +1,31 @@
-public class Main {
+public class Main{
     public static void main(String[] args) {
-        Son son = new Son(20);
-        son.career();
-        son.partner();
+        int a = 8 ; 
+        int b = 0 ;
 
-        Daughter daughter = new Daughter(23);
-        daughter.career();
-        daughter.partner();
+        try{
+            // divide(a, b);
+            // throw new Exception("just for fun.");
+            String name = "kajal";
+            if (name == "kajal") {
+                throw new MyException("name is kajal.");
+            }
+        } catch(MyException e){
+            System.out.println(e.getMessage());
+        } catch(ArithmeticException e){
+            System.out.println(e.getMessage());
+        } catch(Exception e){
+            System.out.println("normal exception");
+        } finally {
+            System.out.println(" it is always execute.");
+        }
+    
+    }
+
+    static int divide(int a , int b) throws ArithmeticException{
+        if (b == 0) {
+            throw new ArithmeticException("pls don't divide by zero.");
+        }
+        return a / b ;
     }
 }

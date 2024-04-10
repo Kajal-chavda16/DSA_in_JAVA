@@ -1,13 +1,5 @@
-package EXTENDDEMO;
-
-public class Demo implements B{
-    @Override
-    public void greet(){
-        System.out.println("hii");
-    }
-
-    @Override
-    public void fun(){
-        System.out.println("funny");
+public class Demo {
+    public static void main(String[] args) {
+        Main.divide(5, 0);
     }
 }
