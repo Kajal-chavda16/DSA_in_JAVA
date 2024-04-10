@@ -1,12 +1,5 @@
-public class B extends A {
-    int b ;
+package EXTENDDEMO;
 
-    B() {
-        super();
-        this.b = 2;
-    }
-    B(int a , int b){
-        super(a);
-        this.b=b;
-    }
+public interface B extends A {
+    void greet();
 }
