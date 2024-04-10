@@ -1,9 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        Shapes shape = new Shapes();
-        Shapes circle = new Circle();
-        Square square = new Square();
+        Son son = new Son(20);
+        son.career();
+        son.partner();
 
-        square.area();
+        Daughter daughter = new Daughter(23);
+        daughter.career();
+        daughter.partner();
     }
 }
