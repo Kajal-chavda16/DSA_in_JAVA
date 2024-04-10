@@ -1,31 +1,19 @@
-public class Main{
+import java.util.Arrays;
+
+public class Main {
     public static void main(String[] args) {
-        int a = 8 ; 
-        int b = 0 ;
+        Student vk = new Student(1, 99.5f);
+        Student kv = new Student(19, 88.8f);
+        Student v = new Student(22, 44.4f);
 
-        try{
-            // divide(a, b);
-            // throw new Exception("just for fun.");
-            String name = "kajal";
-            if (name == "kajal") {
-                throw new MyException("name is kajal.");
-            }
-        } catch(MyException e){
-            System.out.println(e.getMessage());
-        } catch(ArithmeticException e){
-            System.out.println(e.getMessage());
-        } catch(Exception e){
-            System.out.println("normal exception");
-        } finally {
-            System.out.println(" it is always execute.");
-        }
-    
-    }
+        Student[] list = {vk,kv,v};
+        System.out.println(Arrays.toString(list));
+        Arrays.sort(list , (o1, o2) -> -(int)(o1.marks - o2.marks));
+        System.out.println(Arrays.toString(list));
 
-    static int divide(int a , int b) throws ArithmeticException{
-        if (b == 0) {
-            throw new ArithmeticException("pls don't divide by zero.");
+        if (vk.compareTo(kv) > 0) {
+            System.out.println(vk.compareTo(kv));
+            System.out.println("vk has more marks");
         }
-        return a / b ;
     }
 }
