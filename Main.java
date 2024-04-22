@@ -1,30 +1,15 @@
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-
-public class Main{
+import java.util.*;
+public class Main {
     public static void main(String[] args) {
-        // Stack<Integer> stack = new Stack<>();
-        // stack.push(3);
-        // stack.push(5);
-        // stack.push(44);
+        // Scanner scanner = new Scanner(System.in);
+        // BinaryTree tree = new BinaryTree();
+        // tree.populate(scanner);
+        // tree.preetyDisplay();
 
-        // System.out.println(stack.pop());
-        // System.out.println(stack.pop());
-        // System.out.println(stack.pop());
-
-        // Queue<Integer> queue = new LinkedList<>();
-        // queue.add(7);
-        // queue.add(9);
-
-        // System.out.println(queue.remove());
-        // System.out.println(queue.remove());
-
-        Deque<Integer> deque = new ArrayDeque<>();
-        deque.add(44);
-        deque.addLast(77);
-        deque.removeFirst();
+        BST tree = new BST();
+        int nums[] = {1,2,3,4,5,6,7,8};
+        tree.populate(nums);
+        // tree.populatedSorted(nums);
+        tree.display();
     }
 }
