@@ -1,12 +1,14 @@
-public class Factorial {
-    public static void main(String[] args) {
-        System.out.println(fact(6));
-    }
+import java.math.BigInteger;
 
-    static int fact(int n){
-        if (n <= 1) {
-            return 1;
-        }
-        return n * fact(n-1);
+class Factorial {
+  
+  static BigInteger fact(int num) {
+    BigInteger ans = new BigInteger("1");
+
+    for (int i=2; i<= num; i++)   {
+      ans = ans.multiply(BigInteger.valueOf(i));
     }
+    
+    return ans;
+  }
 }
