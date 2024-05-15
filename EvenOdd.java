@@ -1,10 +1,19 @@
-public class EvenOdd {
-     public static void main(String[] args) {
-        int n = 67;
-        System.out.println(isOdd(n));
-     }
+import java.util.Scanner;
 
-     static boolean isOdd(int n){
-        return (n & 1) == 1 ;
-     }
+public class EvenOdd{
+    public static void main(String[] args) {
+        
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter an Integer number : ");
+        int num = in.nextInt();
+
+        if (num % 2 == 0) {
+            System.out.println("Even number");
+        }
+        else{
+            System.out.println("Odd number");
+        }
+
+
+    }
 }
