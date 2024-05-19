@@ -1,20 +1,25 @@
+import java.util.Scanner;
+
 public class Fibo {
     public static void main(String[] args) {
-        // System.out.println(fibo(3));
-        // for(int i = 0 ; i <= 10 ; i++){
-        //     System.out.println(fiboFormula(i));
-        // }
-        System.out.println(fiboFormula(50));
-    }
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
 
-static int fiboFormula(int n){
-    return (int) ( Math.pow( (1+Math.sqrt(5)) / 2, n ) / Math.sqrt(5) ) ; 
-}
-    static int fibo(int n){
-        // base condition
-        if (n < 2) {
-            return n ;
+        int p = 0;
+        int i = 1;
+
+        System.out.print("0 1");
+        int f = 2;
+        while (f<=n) {
+
+            int temp = i;
+            i = i + p;
+            p = temp;
+            f++;
+            
+            System.out.print(" "+i);
         }
-        return fibo(n-1) + fibo(n-2);
+        System.out.println();
+        System.out.println(" "+i);
     }
 }
